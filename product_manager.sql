@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2021 at 04:35 PM
+-- Generation Time: Jul 31, 2021 at 11:13 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -72,6 +72,13 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('admin@admin1.com', '$2y$10$6GF6LhY1uVfpp2ItN.r1ou0rQDyeaDmLXwo5UQwqKwCtZp2TYCvfC', '2021-07-31 08:05:29');
+
 -- --------------------------------------------------------
 
 --
@@ -97,7 +104,8 @@ INSERT INTO `products` (`id`, `names`, `prices`, `description`, `user_id`, `crea
 (4, 'product2', '100frs', 'bests', 1, '2021-02-19 08:16:35', '2021-02-19 08:51:49'),
 (5, 'product1', '1frs', 'very important', 2, '2021-02-19 09:34:20', '2021-02-19 09:34:20'),
 (6, 'product2', '100frs', 'best', 2, '2021-02-19 09:35:02', '2021-02-19 09:35:02'),
-(7, 'product2', '100frs', 'best', 2, '2021-02-19 09:35:49', '2021-02-19 09:35:49');
+(7, 'product2', '100frs', 'best', 2, '2021-02-19 09:35:49', '2021-02-19 09:35:49'),
+(8, 'MTN', '100', 'network', 4, '2021-07-31 08:07:49', '2021-07-31 08:07:49');
 
 -- --------------------------------------------------------
 
@@ -122,7 +130,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Mah', 'admin@admin.com', NULL, '$2y$10$F00w43PaP4YvBh4cgQyEFu2GokcuWYQygOiCa8W/Pz/XC659.bWXK', NULL, '2021-02-19 08:09:03', '2021-02-19 08:09:03'),
-(2, 'English', 'admin@admin1.com', NULL, '$2y$10$nF/.K89zVO25rGFrxdBFDOoRPsyWjVELqmWUOJPirPZGg6eLW67ai', NULL, '2021-02-19 09:33:25', '2021-02-19 09:33:25');
+(2, 'English', 'admin@admin1.com', NULL, '$2y$10$nF/.K89zVO25rGFrxdBFDOoRPsyWjVELqmWUOJPirPZGg6eLW67ai', NULL, '2021-02-19 09:33:25', '2021-02-19 09:33:25'),
+(3, 'English', 'admin@admin.com1', NULL, '$2y$10$Y0gOkowEgmtWFdei6Ceevu.X2Oto7hVK/7o6ey/N6z696FzuhWeOW', NULL, '2021-02-20 23:29:14', '2021-02-20 23:29:14'),
+(4, 'courage', 'admin@example.com', NULL, '$2y$10$4GUljt6nCnVDdD0Ws8nKWe4N960vJTyeZC7J0jm2wEF4jJbVwjgSy', NULL, '2021-07-31 08:07:21', '2021-07-31 08:07:21');
 
 --
 -- Indexes for dumped tables
@@ -181,13 +191,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
